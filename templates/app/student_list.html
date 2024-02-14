@@ -1,0 +1,30 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>Student List</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <br><br>
+        <u><h2>List of Students are:- </h2></u>
+        <table border="3px">
+            <tr>
+                <th>School Name</th>
+                <th>Student Name</th>
+                <th>Student Age</th>
+            </tr>
+            
+            {% for std in  students %}
+                <tr> 
+                    <td>{{std.sname}}</td>
+                    <td><a href="{{std.pk}}" style="font-size: 1.8vw;">{{std.stdname}}</a></td>
+                    <td>{{std.stdage}}</td>
+
+                </tr>                
+            {% endfor %}
+            
+        </table>
+        
+    </center>
+{%  endblock %}
